@@ -5,19 +5,19 @@ import Footer from "../components/Footer.astro";
 const pageTitle = "About Me";
 
 const identity = {
-    name: "まく / Maku",
-    city: "京都",
-    occupation: "Webフロントエンドエンジニア",
-    hobbies: ["旅行🏞️", "ゲーム🎮"],
+  name: "まく / Maku",
+  city: "京都",
+  occupation: "Webフロントエンドエンジニア",
+  hobbies: ["旅行🏞️", "ゲーム🎮"],
 };
 
 const skills = [
-    "React",
-    "Next.js",
-    "JavaScript",
-    "TypeScript",
-    "C#",
-    "VR develop",
+  "React",
+  "Next.js",
+  "JavaScript",
+  "TypeScript",
+  "C#",
+  "VR develop",
 ];
 
 const happy = true;
@@ -28,55 +28,55 @@ const skillColor = "navy";
 ---
 
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-        <style define:vars={{ skillColor }}>
-            h1 {
-                color: purple;
-                font-size: 4rem;
-            }
-            .skill {
-                color: green;
-                color: var(--skillColor);
-                font-weight: bold;
-            }
-        </style>
-    </head>
-    <body>
-        <Header />
-        <h1>{pageTitle}</h1>
-        <h2>{identity.name}</h2>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <style define:vars={{ skillColor }}>
+      h1 {
+        color: purple;
+        font-size: 4rem;
+      }
+      .skill {
+        color: green;
+        color: var(--skillColor);
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <h1>{pageTitle}</h1>
+    <h2>{identity.name}</h2>
 
-        <p>{identity.occupation}です。</p>
-        {
-            identity.hobbies.length >= 2 && (
-                <p>
-                    趣味: {identity.hobbies[0]} / {identity.hobbies[1]}
-                </p>
-            )
-        }
-        <p>スキル:</p>
-        <ul>
-            {skills.map((skill) => <li class="skill">{skill}</li>)}
-        </ul>
-        {happy && <p>I am happy to be learning Astro!</p>}
+    <p>{identity.occupation}です。</p>
+    {
+      identity.hobbies.length >= 2 && (
+        <p>
+          趣味: {identity.hobbies[0]} / {identity.hobbies[1]}
+        </p>
+      )
+    }
+    <p>スキル:</p>
+    <ul>
+      {skills.map((skill) => <li class="skill">{skill}</li>)}
+    </ul>
+    {happy && <p>I am happy to be learning Astro!</p>}
 
-        {finished && <p>I finished this tutorial!</p>}
+    {finished && <p>I finished this tutorial!</p>}
 
-        {
-            goal === 3 ? (
-                <p>My goal is to finish in 3 days.</p>
-            ) : (
-                <p>My goal is not 3 days.</p>
-            )
-        }
-        <Footer />
-        <script>
-            import "../scripts/menu.js";
-        </script>
-    </body>
+    {
+      goal === 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is not 3 days.</p>
+      )
+    }
+    <Footer />
+    <script>
+      import "../scripts/menu.js";
+    </script>
+  </body>
 </html>
